@@ -1,3 +1,4 @@
+"use client";
 import { CircleUser, Footprints, Search, ShoppingBasket } from "lucide-react";
 import Link from "next/link";
 import React, { ChangeEventHandler, useContext } from "react";

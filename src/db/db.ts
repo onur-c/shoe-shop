@@ -248,7 +248,6 @@ export const shoes = [
   {
     img: "https://m.media-amazon.com/images/I/61men05KRxL._AC_UY625_.jpg",
     title: "DREAM PAIRS Court Shoes",
-
     reviews: "(1091 reviews)",
     prevPrice: "$140,00",
     newPrice: "$150",
