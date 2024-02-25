@@ -1,10 +1,16 @@
 import { CircleUser, Footprints, Search, ShoppingBasket } from "lucide-react";
 import Link from "next/link";
-import React from "react";
+import React, { ChangeEventHandler, useContext } from "react";
 import { Label } from "./ui/label";
 import { Input } from "./ui/input";
+import { CategoryContext } from "@/context/CategoryContext";
 
 const Header = () => {
+  const { input, setInput } = useContext(CategoryContext);
+
+  const handleChange: ChangeEventHandler<HTMLInputElement> = (e) => {
+    setInput(e.target.value);
+  };
   return (
     <header className="flex items-center justify-between h-20 px-20">
       <Link className="flex gap-1" href={"/"}>
@@ -15,7 +21,12 @@ const Header = () => {
         <Label htmlFor="search-input">
           <Search />
         </Label>
-        <Input id="search-input" placeholder="Search..." />
+        <Input
+          id="search-input"
+          placeholder="Search..."
+          onChange={handleChange}
+          value={input}
+        />
       </div>
 
       <div className="flex gap-8">

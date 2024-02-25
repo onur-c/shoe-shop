@@ -1,18 +1,31 @@
+"use client";
+
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { RadioGroup, RadioGroupItem } from "./ui/radio-group";
+import { CategoryContext } from "@/context/CategoryContext";
+import { useContext } from "react";
 import { Label } from "./ui/label";
+import { RadioGroup, RadioGroupItem } from "./ui/radio-group";
+
 export function Filters() {
+  // const [category, setCategory] = useState("all");
+
+  const { setCategory } = useContext(CategoryContext);
+
+  const handleChange = (value: string) => {
+    setCategory(value);
+  };
+
   return (
     <Accordion type="single" collapsible className="w-full">
       <AccordionItem value="item-1">
         <AccordionTrigger>Categories</AccordionTrigger>
         <AccordionContent>
-          <RadioGroup defaultValue="all">
+          <RadioGroup defaultValue="all" onValueChange={handleChange}>
             <div className="flex items-center space-x-2">
               <RadioGroupItem value="all" id="r1" />
               <Label htmlFor="r1">All</Label>
@@ -39,7 +52,7 @@ export function Filters() {
       <AccordionItem value="item-2">
         <AccordionTrigger>Price</AccordionTrigger>
         <AccordionContent>
-          <RadioGroup defaultValue="all">
+          <RadioGroup defaultValue="all" onValueChange={handleChange}>
             <div className="flex items-center space-x-2">
               <RadioGroupItem value="all" id="f1" />
               <Label htmlFor="f1">All</Label>
@@ -66,7 +79,7 @@ export function Filters() {
       <AccordionItem value="item-3">
         <AccordionTrigger>Colors</AccordionTrigger>
         <AccordionContent>
-          <RadioGroup defaultValue="all">
+          <RadioGroup defaultValue="all" onValueChange={handleChange}>
             <div className="flex items-center space-x-2">
               <RadioGroupItem value="all" id="g1" />
               <Label htmlFor="g1">All</Label>
