@@ -238,7 +238,6 @@ export const shoes = [
   {
     img: "https://m.media-amazon.com/images/I/71czu7WgGuL._AC_UY695_.jpg",
     title: "Slip On Stiletto High Heel",
-
     reviews: "(222 reviews)",
     prevPrice: "$140,00",
     newPrice: "$100",
